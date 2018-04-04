@@ -6,41 +6,47 @@ namespace SuperAwesomeFancyPants
 {
     public class Car
     {
-        //private float _numberOfFuel;
-        public float Fuel { get; private set; }
-        public float Milage { get; private set; }
+        //private const int _maxSpeed = 184;
+        private int _maxSpeed = 184;
+        //private static readonly int _maxSpeed = 184;
 
-        public float Range { get { return Fuel * Milage;} }
+        public float Fuel { get; set; }
 
-        //private float _fuel;
-
-        //public float Fuel
+        //static CarT()
         //{
-        //    get => _fuel;
-        //    set => _fuel = value;
+        //    _maxSpeed = 140;
         //}
 
-        /// <summary>
-        /// THis creates a car using 50 fuel
-        /// </summary>
         public Car()
         {
-            Fuel = 50f;
+            Fuel = 40f;
         }
 
-        /// <summary>
-        /// This creates a car using given fuel
-        /// </summary>
-        /// <param name="fuel">The amount of fuel to craete the car with</param>
-        public Car(float fuel)
+        public Car(float initialFuel, int maxSpeed)
         {
-            Fuel = fuel;
+            Fuel = initialFuel;
+            _maxSpeed = maxSpeed;
         }
 
-        public void AddAmmountOfFuel(float ammountOfFuel)
+        ~Car()
         {
-            Fuel += ammountOfFuel;
-            //_numberOfFuel = _numberOfFuel + ammountOfFuel;
+        }
+
+        public void AddSomeFuel(float fuelToAdd)
+        {
+            if (fuelToAdd <= 0)
+            {
+                throw new FuelNegativeException();
+            }
+            Fuel += fuelToAdd;
+            _maxSpeed += 1;
+            _maxSpeed = _maxSpeed + 1;
+            _maxSpeed--;
+        }
+
+        public static void CallSomthingOnCar()
+        {
+
         }
     }
 }

@@ -1,49 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SuperAwesomeFancyPants
 {
-    public class CarT
-    {
-        //private const int _maxSpeed = 184;
-        private int _maxSpeed = 184;
-        //private static readonly int _maxSpeed = 184;
-
-        public float Fuel { get; set; }
-
-        //static CarT()
-        //{
-        //    _maxSpeed = 140;
-        //}
-
-        public CarT()
-        {
-            Fuel = 40f;
-        }
-
-        public CarT(float initialFuel, int maxSpeed)
-        {
-            Fuel = initialFuel;
-            _maxSpeed = maxSpeed;
-        }
-
-        ~CarT()
-        {
-        }
-
-        public void AddSomeFuel(float fuelToAdd)
-        {
-            Fuel += fuelToAdd;
-            _maxSpeed += 1;
-            _maxSpeed = _maxSpeed + 1;
-            _maxSpeed--;
-        }
-
-        public static void CallSomthingOnCar()
-        {
-
-        }
-    }
-
     public class Program
     {
         /// <summary>
@@ -52,88 +11,178 @@ namespace SuperAwesomeFancyPants
         /// <param name="args"></param>
         public static void Main(string[] args)
         {
-            int number = 1234;
-            string numberAsString = number.ToString();
+            string[] listOfWords = new string[] { "list", "car", "fuel", "road" };
+            string[] arrayOfWords = new string[4];
+            //                                      0       1       2       3
 
-            int index = 1;
-
-            Console.WriteLine(index); // 1
-            Console.WriteLine(index++); // 1 = 2
-            Console.WriteLine(++index); // 3
-
-            int age = 16;
-
-            //if (true)
-            if (age >= 10 && age <= 15)
+            listOfWords[0] = "not a list";
+            if (listOfWords[0] == "not a list")
             {
 
             }
 
-            if (age != 16)
-            {
+            List<string> list = new List<string>();
+            list.Add("list");
+            list.Add("car");
+            list.Add("fuel");
+            list.Add("road");
 
+            list[0] = "not a list";
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine(list[i]);
             }
 
-            string input = Console.ReadLine();
-            //if (input == null || input == "")
-            bool isNullOrEmpty = string.IsNullOrEmpty(input);
-            //if (!isNullOrEmpty)
-            if (!string.IsNullOrEmpty(input))
+            int index = 0;
+            while (index < list.Count)
             {
-                // if true do this
-                //Console.WriteLine("The string is empty");
-                Console.WriteLine($"The string contains: {input}");
+                Console.WriteLine(list[index]);
+                index++;
             }
 
-
-            if (input == "test")
+            foreach (string str in list)
             {
-                Console.WriteLine("It equals test!");
-            }
-            else if (input.Contains("yacht"))
-            {
-                Console.WriteLine("It equals Yacht!");
-            }
-            else
-            {
-                Console.WriteLine("It doesn't contain anything!");
+                Console.WriteLine(str);
             }
 
-            CarT car = new CarT();
-            car.AddSomeFuel(10f);
-            
+            List<Car> listOfCars = new List<Car>();
+            listOfCars.Add(new Car(10f, 10));
+            listOfCars.Add(new Car());
+            listOfCars.Add(new Car());
 
-            CarT secondCar = new CarT(20f, 150);
-
-            IncreaseFuel(car);
-
-            int result = Sum(10, 20);
-
-            Console.WriteLine("Program end!");
-            Console.ReadKey();
-        }
-
-        private static int Sum(int x, int y)
-        {
-            return x + y;
-        }
-
-        private static float Sum(float x, float y)
-        {
-            return x + y;
-        }
-
-        private static int Sum(int x, int y, int z)
-        {
-            return x + y + z;
-        }
-
-        public static void IncreaseFuel(CarT car)
-        {
-            car.Fuel += 10;
+            foreach (Car car in listOfCars)
+            {
+                Console.WriteLine(car.Fuel);
+            }
         }
     }
 }
+
+//using System;
+
+//namespace SuperAwesomeFancyPants
+//{
+//    public class Program
+//    {
+//        /// <summary>
+//        /// 
+//        /// </summary>
+//        /// <param name="args"></param>
+//        public static void Main(string[] args)
+//        {
+//            int zero = 0;
+//            int number2 = 0;
+
+//            try
+//            {
+//                number2 = 1234 / zero;
+
+//                number2++;
+//            }
+//            catch (DivideByZeroException)
+//            {
+//                Console.WriteLine("We tried to divde by 0");
+
+//                number2 = 0;
+//            }
+//            finally
+//            {
+//                Console.WriteLine("This is the finally");
+//            }
+
+//            Car negCar = new Car();
+//            try
+//            {
+//                negCar.AddSomeFuel(-10f);
+//            }
+//            catch (FuelNegativeException)
+//            {
+//                Console.WriteLine("Negative fuel");
+//            }
+
+//            int number = 1234;
+//            string numberAsString = number.ToString();
+
+//            int index = 1;
+
+//            Console.WriteLine(index); // 1
+//            Console.WriteLine(index++); // 1 = 2
+//            Console.WriteLine(++index); // 3
+
+//            int age = 16;
+
+//            //if (true)
+//            if (age >= 10 && age <= 15)
+//            {
+
+//            }
+
+//            if (age != 16)
+//            {
+
+//            }
+
+//            string input = Console.ReadLine();
+//            //if (input == null || input == "")
+//            bool isNullOrEmpty = string.IsNullOrEmpty(input);
+//            //if (!isNullOrEmpty)
+//            if (!string.IsNullOrEmpty(input))
+//            {
+//                // if true do this
+//                //Console.WriteLine("The string is empty");
+//                Console.WriteLine($"The string contains: {input}");
+//            }
+
+
+//            if (input == "test")
+//            {
+//                Console.WriteLine("It equals test!");
+//            }
+//            else if (input.Contains("yacht"))
+//            {
+//                Console.WriteLine("It equals Yacht!");
+//            }
+//            else
+//            {
+//                Console.WriteLine("It doesn't contain anything!");
+//            }
+
+//            Car car = new Car();
+//            car.AddSomeFuel(10f);
+
+
+//            Car secondCar = new Car(20f, 150);
+
+//            IncreaseFuel(car);
+
+//            int result = Sum(10, 20);
+
+//            Console.WriteLine("Program end!");
+//            Console.ReadKey();
+//        }
+
+//        private static int Sum(int x, int y)
+//        {
+//            return x + y;
+//        }
+
+//        private static float Sum(float x, float y)
+//        {
+//            return x + y;
+//        }
+
+//        private static int Sum(int x, int y, int z)
+//        {
+//            return x + y + z;
+//        }
+
+//        public static void IncreaseFuel(Car car)
+//        {
+//            car.Fuel += 10;
+//        }
+//    }
+//}
 
 //using System;
 
@@ -183,7 +232,7 @@ namespace SuperAwesomeFancyPants
 //            //Console.WriteLine($"Hello Yacht, {name}. {_age}");
 
 //            Car car = new Car();
-            
+
 //            car.AddAmmountOfFuel(50.0f);
 //            float carFuel = car.Fuel;
 
