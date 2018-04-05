@@ -3,61 +3,172 @@ using System.Collections.Generic;
 
 namespace SuperAwesomeFancyPants
 {
+    public class ToDo
+    {
+        public string Name { get; set; }
+        public DateTime Date { get; set; }
+        public EActivityType ActivityType { get; set; }
+
+        public ToDo()
+        {
+            Date = DateTime.Now;
+        }
+
+        public ToDo(string name, EActivityType activityType)
+            : this(name, DateTime.Now, activityType)
+        {
+        }
+
+        public ToDo(string name, DateTime date, EActivityType activityType)
+        {
+            Name = name;
+            Date = date;
+            ActivityType = activityType;
+        }
+    }
+
+    public enum EActivityType
+    {
+        Drive = 1,
+        Programming = 2,
+        Gaming = 3,
+        Fitness = 0
+    }
+
     public class Program
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="args"></param>
         public static void Main(string[] args)
         {
-            string[] listOfWords = new string[] { "list", "car", "fuel", "road" };
-            string[] arrayOfWords = new string[4];
-            //                                      0       1       2       3
+            DateTime date = DateTime.Now;
 
-            listOfWords[0] = "not a list";
-            if (listOfWords[0] == "not a list")
+            Console.WriteLine($"{date.Year} {date.Month} {date.Day}");
+            Console.WriteLine($"{DateTime.Now.Year} {DateTime.Now.Month} {DateTime.Now.Day}");
+            Console.WriteLine($"{date.ToLongDateString()}");
+
+            List<ToDo> todos = new List<ToDo>();
+            todos.Add(new ToDo("Gaming", DateTime.Now.AddHours(12), EActivityType.Gaming));
+            todos.Add(new ToDo("Programming", DateTime.Now.AddHours(24), EActivityType.Programming));
+
+            foreach (ToDo todo in todos)
             {
+                if (todo.ActivityType == EActivityType.Gaming)
+                {
+                    break;
+                }
+                //if (todo.ActivityType == EActivityType.Gaming)
+                //{
 
+                //}
+                //else if (todo.ActivityType == EActivityType.Programming)
+                //{
+
+                //}
+                //else if (todo.ActivityType == EActivityType.Drive)
+                //{
+
+                //}
+                //else if (todo.ActivityType == EActivityType.Fitness)
+                //{
+
+                //}
+
+                //switch (todo.Name)
+                //{
+                //    case "Something":
+                //    {
+                //        Console.WriteLine("You have to somehting");
+                //    }
+                //}
+
+                //switch (todo.ActivityType)
+                //{
+                //    case EActivityType.Gaming:
+                //        {
+                //            Console.WriteLine("Gaming");
+                //            break;
+                //        }
+                //    case EActivityType.Programming:
+                //        {
+                //            Console.WriteLine("Programming");
+                //            break;
+                //        }
+                //    case EActivityType.Fitness:
+                //    case EActivityType.Drive:
+                //        {
+                //            Console.WriteLine("THis is just wasted time");
+                //        }
+                //    default:
+                //        {
+                //            Console.WriteLine("Default");
+                //        }
+                //}
             }
 
-            List<string> list = new List<string>();
-            list.Add("list");
-            list.Add("car");
-            list.Add("fuel");
-            list.Add("road");
-
-            list[0] = "not a list";
-
-            for (int i = 0; i < list.Count; i++)
-            {
-                Console.WriteLine(list[i]);
-            }
-
-            int index = 0;
-            while (index < list.Count)
-            {
-                Console.WriteLine(list[index]);
-                index++;
-            }
-
-            foreach (string str in list)
-            {
-                Console.WriteLine(str);
-            }
-
-            List<Car> listOfCars = new List<Car>();
-            listOfCars.Add(new Car(10f, 10));
-            listOfCars.Add(new Car());
-            listOfCars.Add(new Car());
-
-            foreach (Car car in listOfCars)
-            {
-                Console.WriteLine(car.Fuel);
-            }
+            Console.ReadKey();
         }
     }
 }
+
+//using System;
+//using System.Collections.Generic;
+
+//namespace SuperAwesomeFancyPants
+//{
+//    public class Program
+//    {
+//        /// <summary>
+//        /// 
+//        /// </summary>
+//        /// <param name="args"></param>
+//        public static void Main(string[] args)
+//        {
+//            string[] listOfWords = new string[] { "list", "car", "fuel", "road" };
+//            string[] arrayOfWords = new string[4];
+//            //                                      0       1       2       3
+
+//            listOfWords[0] = "not a list";
+//            if (listOfWords[0] == "not a list")
+//            {
+
+//            }
+
+//            List<string> list = new List<string>();
+//            list.Add("list");
+//            list.Add("car");
+//            list.Add("fuel");
+//            list.Add("road");
+
+//            list[0] = "not a list";
+
+//            for (int i = 0; i < list.Count; i++)
+//            {
+//                Console.WriteLine(list[i]);
+//            }
+
+//            int index = 0;
+//            while (index < list.Count)
+//            {
+//                Console.WriteLine(list[index]);
+//                index++;
+//            }
+
+//            foreach (string str in list)
+//            {
+//                Console.WriteLine(str);
+//            }
+
+//            List<Car> listOfCars = new List<Car>();
+//            listOfCars.Add(new Car(10f, 10));
+//            listOfCars.Add(new Car());
+//            listOfCars.Add(new Car());
+
+//            foreach (Car car in listOfCars)
+//            {
+//                Console.WriteLine(car.Fuel);
+//            }
+//        }
+//    }
+//}
 
 //using System;
 
