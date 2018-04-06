@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.Beer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.Inherit", "SuperAwesomeFancyPants.Inherit\SuperAwesomeFancyPants.Inherit.csproj", "{7F2CA18B-6467-4F66-A110-BFA425F21FE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.InheritZoo", "SuperAwesomeFancyPants.InheritZoo\SuperAwesomeFancyPants.InheritZoo.csproj", "{1FBB8493-12C8-45B5-BFB1-20157E1E37C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7F2CA18B-6467-4F66-A110-BFA425F21FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F2CA18B-6467-4F66-A110-BFA425F21FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F2CA18B-6467-4F66-A110-BFA425F21FE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FBB8493-12C8-45B5-BFB1-20157E1E37C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FBB8493-12C8-45B5-BFB1-20157E1E37C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FBB8493-12C8-45B5-BFB1-20157E1E37C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FBB8493-12C8-45B5-BFB1-20157E1E37C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
