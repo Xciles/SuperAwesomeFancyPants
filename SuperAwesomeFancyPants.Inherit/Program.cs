@@ -11,7 +11,7 @@ namespace SuperAwesomeFancyPants.Inherit
         public int NumberOfTires { get; set; }
         public int NumberOfDoors { get; set; }
         public float AmountOfFuel { get; set; }
-        public string Model { get; set; }
+        public string Model { get; protected set; }
         public string Description { get; set; }
         public string Country { get; set; }
 
@@ -34,6 +34,12 @@ namespace SuperAwesomeFancyPants.Inherit
 
     public class Volkswagen : Car
     {
+        public Volkswagen() { }
+        public Volkswagen(int numberOfTires)
+        {
+            NumberOfTires = numberOfTires;
+        }
+
         public override void DriveAround()
         {
             Console.WriteLine("Driving around in my Volkswagen!");
@@ -56,13 +62,18 @@ namespace SuperAwesomeFancyPants.Inherit
 
     public class Program
     {
+        private static int ReturnInt()
+        {
+            return 1234;
+        }
+
         public static void Main(string[] args)
         {
-            List<Car> listOfCars = new List<Car>();
-            listOfCars.Add(new Volkswagen());
+            var listOfCars = new List<Car>();
+            listOfCars.Add(new Volkswagen(4));
             listOfCars.Add(new Audi());
 
-            foreach (Car car in listOfCars)
+            foreach (var car in listOfCars)
             {
                 if (car.GetType() == typeof(Volkswagen))
                 {
@@ -74,14 +85,22 @@ namespace SuperAwesomeFancyPants.Inherit
                 }
             }
 
-            Car car2 = new Car();
+            int returnVariable = ReturnInt();
+            var returnVariable2 = ReturnInt();
+
+            var car2 = new Car();
             car2.DriveAround();
 
-            Volkswagen vCar = new Volkswagen();
+            var volkwagen = new Volkswagen()
+            {
+                NumberOfTires = 4
+            };
+
+            var vCar = new Volkswagen(4);
             vCar.DriveAround();
             vCar.SitInTheMiddle();
 
-            Car secondVCar = new Volkswagen();
+            var secondVCar = new Volkswagen(4);
             secondVCar.DriveAround();
 
             Audi audi = new Audi();
