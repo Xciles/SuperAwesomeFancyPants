@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace SuperAwesomeFancyPants.InheritZoo
+namespace SuperAwesomeFancyPants.InheritZoo.Animals
 {
-    public class Zergling : Animal
+    public class Zergling : Mammal
     {
         public int NumberOfClaws { get; set; } = 2;
 

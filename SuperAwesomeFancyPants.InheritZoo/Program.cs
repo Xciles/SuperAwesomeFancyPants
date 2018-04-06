@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using SuperAwesomeFancyPants.InheritZoo.Animals;
+using SuperAwesomeFancyPants.InheritZoo.Business;
 
 namespace SuperAwesomeFancyPants.InheritZoo
 {
@@ -27,6 +29,11 @@ namespace SuperAwesomeFancyPants.InheritZoo
     {
         public static void Main(string[] args)
         {
+            IAnimal animal = new Lion(1);
+            animal.Eat();
+
+
+
             Zoo zoo = new Zoo();
 
             zoo.FillZoo();

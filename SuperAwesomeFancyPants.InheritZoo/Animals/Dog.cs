@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SuperAwesomeFancyPants.InheritZoo
+namespace SuperAwesomeFancyPants.InheritZoo.Animals
 {
     public class Dog : Mammal
     {

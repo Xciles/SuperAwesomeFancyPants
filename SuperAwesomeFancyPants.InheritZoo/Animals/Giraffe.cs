@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace SuperAwesomeFancyPants.InheritZoo
+namespace SuperAwesomeFancyPants.InheritZoo.Animals
 {
-    public class Giraffe : Mammal
+    public class Giraffe : Mammal, IHerbivore
     {
         public Giraffe(int weight)
         {
@@ -14,11 +14,17 @@ namespace SuperAwesomeFancyPants.InheritZoo
         public override void Eat()
         {
             Console.WriteLine("Eating some 'trees'");
+            EatGrass();
         }
 
         public override void MakeSound()
         {
             Console.WriteLine("uhm");
+        }
+
+        public void EatGrass()
+        {
+            
         }
     }
 }

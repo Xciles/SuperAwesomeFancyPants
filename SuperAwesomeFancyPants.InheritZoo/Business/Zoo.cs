@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using SuperAwesomeFancyPants.InheritZoo.Animals;
 
-namespace SuperAwesomeFancyPants.InheritZoo
+namespace SuperAwesomeFancyPants.InheritZoo.Business
 {
     public class Zoo
     {
@@ -35,6 +36,11 @@ namespace SuperAwesomeFancyPants.InheritZoo
                                   $"Name: {animal.Name}, Weight: {animal.Weight}.");
                 animal.Eat();
                 animal.MakeSound();
+
+                if (animal is IHerbivore herbivore)
+                {
+                    herbivore.EatGrass();
+                }
             }
         }
     }
