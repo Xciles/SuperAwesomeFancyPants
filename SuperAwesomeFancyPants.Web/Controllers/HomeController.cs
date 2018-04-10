@@ -24,7 +24,7 @@ namespace SuperAwesomeFancyPants.Web.Controllers
             Console.WriteLine("Hi! End");
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             return View();
         }

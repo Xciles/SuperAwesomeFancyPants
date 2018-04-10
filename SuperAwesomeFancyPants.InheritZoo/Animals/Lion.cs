@@ -4,15 +4,14 @@ namespace SuperAwesomeFancyPants.InheritZoo.Animals
 {
     public class Lion : Mammal, IHerbivore
     {
-        public Lion(int weight)
+        public Lion(int weight) : base(weight)
         {
             Name = "Lion";
             NumberOfLegs = 4;
-            Weight = weight;
         }
 
         public override void Eat()
-        { 
+        {
             EatGrass();
         }
 

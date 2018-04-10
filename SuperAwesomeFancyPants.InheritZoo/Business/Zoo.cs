@@ -1,10 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using SuperAwesomeFancyPants.InheritZoo.Animals;
 
 namespace SuperAwesomeFancyPants.InheritZoo.Business
 {
+    public static class ListExtensions
+    {
+        public static int NumberOfMammals<T, TCheck>(this IList<T> list)
+        {
+            return list.OfType<TCheck>().Count();
+        }
+    }
+
     public class Zoo
     {
         private IList<Animal> _animals = new List<Animal>();
@@ -26,36 +35,36 @@ namespace SuperAwesomeFancyPants.InheritZoo.Business
 
         public void FillZoo()
         {
-            int outValue;
-            var result = TrySum(5, 5, out outValue);
-            if (TrySum(5, 5, out outValue))
-            {
+            //int outValue;
+            //var result = TrySum(5, 5, out outValue);
+            //if (TrySum(5, 5, out outValue))
+            //{
 
-            }
+            //}
 
-            Animal animal = new Lion(1);
+            //Animal animal = new Lion(1);
 
-            string st = "thing";
+            //string st = "thing";
 
-            //Lion lion = (Lion) animal;
-            Lion lion = animal as Lion;
-            if (lion == null)
-            {
+            ////Lion lion = (Lion) animal;
+            //Lion lion = animal as Lion;
+            //if (lion == null)
+            //{
 
-            }
+            //}
 
-            string number = "thing";
-            int iNumber = Convert.ToInt32(number);
+            //string number = "thing";
+            //int iNumber = Convert.ToInt32(number);
 
-            int.TryParse(number, out int parseResult);
+            //int.TryParse(number, out int parseResult);
 
 
-            int i = 123;
-            long l = i;
-            //short s = i;
+            //int i = 123;
+            //long l = i;
+            ////short s = i;
 
-            double d = 123.1;
-            int di = (int) d;
+            //double d = 123.1;
+            //int di = (int) d;
 
 
             _animals.Add(new Lion(60));
@@ -64,6 +73,31 @@ namespace SuperAwesomeFancyPants.InheritZoo.Business
 
             _animals.Add(new Giraffe(150));
             _animals.Add(new Crocodile(250));
+            //_animals.Count
+            var numberOfLions = _animals.NumberOfMammals<Animal,Lion>();
+
+            if (_animals.Any())
+            if (_animals.Count == 0)
+            {
+
+            }
+
+            var listFor = new List<Animal>();
+            foreach (var animal in _animals)
+            {
+                if (animal.Weight > 10)
+                {
+                    listFor.Add(animal);
+                }
+            }
+
+            var list = _animals.Where(animal => animal.Weight > 10).ToList();
+
+            var listQ = (from animal in _animals
+                        where animal.Weight > 10
+                        select animal);
+
+            _animals.FirstOrDefault();
 
             var lions = _animals.OfType<IHerbivore>();
         }

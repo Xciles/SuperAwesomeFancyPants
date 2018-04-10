@@ -5,6 +5,14 @@ using SuperAwesomeFancyPants.InheritZoo.Business;
 
 namespace SuperAwesomeFancyPants.InheritZoo
 {
+    public static class StringExtensions
+    {
+        public static int NumberOfWords(this string str)
+        {
+            return str.Split(" ").Length;
+        }
+    }
+
     /// <summary>
     /// Create a Zoo that contains various animals.
     /// The Zoo contains a list of animals and will manage interaction.
@@ -27,8 +35,17 @@ namespace SuperAwesomeFancyPants.InheritZoo
     /// </summary>
     public class Program
     {
+        
+
         public static void Main(string[] args)
         {
+            var someString = "this is a bit of text that I want to do something with";
+            var numberOfWords = someString.Split(" ").Length;
+            var numberOfWordsEx = someString.NumberOfWords();
+            //var numberOfWordsOfMethod = NumberOfWords(someString);
+
+
+
             IAnimal animal = new Lion(1);
             animal.Eat();
 
