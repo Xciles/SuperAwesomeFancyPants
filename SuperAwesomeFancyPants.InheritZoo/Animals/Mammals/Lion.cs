@@ -1,13 +1,13 @@
 ﻿using System;
+using SuperAwesomeFancyPants.InheritZoo.Animals.Interfaces;
 
-namespace SuperAwesomeFancyPants.InheritZoo.Animals
+namespace SuperAwesomeFancyPants.InheritZoo.Animals.Mammals
 {
     public class Lion : Mammal, IHerbivore
     {
-        public Lion(int weight) : base(weight)
+        public Lion(int weight) 
+            : base(weight, "Lion")
         {
-            Name = "Lion";
-            NumberOfLegs = 4;
         }
 
         public override void Eat()

@@ -1,15 +1,13 @@
 ﻿using System;
 
-namespace SuperAwesomeFancyPants.InheritZoo.Animals
+namespace SuperAwesomeFancyPants.InheritZoo.Animals.Reptiles
 {
     public class Crocodile : Reptile
     {
         public Crocodile(int weight)
+            : base(weight, "Crocodile")
         {
-            Name = "Crocodile";
             NumberOfLegs = 4;
-            Weight = weight;
-            MaxNumberOfEggs = 1;
         }
 
         public override void Eat()

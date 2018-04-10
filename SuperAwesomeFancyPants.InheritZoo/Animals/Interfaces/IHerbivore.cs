@@ -1,4 +1,4 @@
-﻿namespace SuperAwesomeFancyPants.InheritZoo.Animals
+﻿namespace SuperAwesomeFancyPants.InheritZoo.Animals.Interfaces
 {
     public interface IHerbivore
     {

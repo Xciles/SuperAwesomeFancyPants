@@ -1,14 +1,13 @@
 ﻿using System;
+using SuperAwesomeFancyPants.InheritZoo.Animals.Interfaces;
 
-namespace SuperAwesomeFancyPants.InheritZoo.Animals
+namespace SuperAwesomeFancyPants.InheritZoo.Animals.Mammals
 {
     public class Giraffe : Mammal, IHerbivore
     {
         public Giraffe(int weight)
+            : base (weight, "Giraffe")
         {
-            Name = "Giraffe";
-            NumberOfLegs = 4;
-            Weight = weight;
         }
 
         public override void Eat()

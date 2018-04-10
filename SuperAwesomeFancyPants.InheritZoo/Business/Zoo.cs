@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
 using SuperAwesomeFancyPants.InheritZoo.Animals;
+using SuperAwesomeFancyPants.InheritZoo.Animals.Interfaces;
+using SuperAwesomeFancyPants.InheritZoo.Animals.Mammals;
+using SuperAwesomeFancyPants.InheritZoo.Animals.Others;
+using SuperAwesomeFancyPants.InheritZoo.Animals.Reptiles;
+using SuperAwesomeFancyPants.InheritZoo.Extensions;
 
 namespace SuperAwesomeFancyPants.InheritZoo.Business
 {
-    public static class ListExtensions
-    {
-        public static int NumberOfMammals<T, TCheck>(this IList<T> list)
-        {
-            return list.OfType<TCheck>().Count();
-        }
-    }
-
     public class Zoo
     {
         private IList<Animal> _animals = new List<Animal>();

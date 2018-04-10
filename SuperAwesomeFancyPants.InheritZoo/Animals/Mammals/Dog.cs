@@ -1,15 +1,12 @@
 ﻿using System;
 
-namespace SuperAwesomeFancyPants.InheritZoo.Animals
+namespace SuperAwesomeFancyPants.InheritZoo.Animals.Mammals
 {
     public class Dog : Mammal
     {
         public Dog(int weight)
+            : base (weight, "Yes, this is Dog?")
         {
-            Name = "This is Dog!?";
-            NumberOfLegs = 4;
-            Weight = weight;
-            MaxNumberOfChildernInWomb = 10;
         }
 
         public override void Eat()

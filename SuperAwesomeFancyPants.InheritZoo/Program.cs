@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections;
 using SuperAwesomeFancyPants.InheritZoo.Animals;
+using SuperAwesomeFancyPants.InheritZoo.Animals.Interfaces;
+using SuperAwesomeFancyPants.InheritZoo.Animals.Mammals;
 using SuperAwesomeFancyPants.InheritZoo.Business;
+using SuperAwesomeFancyPants.InheritZoo.Extensions;
 
 namespace SuperAwesomeFancyPants.InheritZoo
 {
-    public static class StringExtensions
-    {
-        public static int NumberOfWords(this string str)
-        {
-            return str.Split(" ").Length;
-        }
-    }
-
     /// <summary>
     /// Create a Zoo that contains various animals.
     /// The Zoo contains a list of animals and will manage interaction.

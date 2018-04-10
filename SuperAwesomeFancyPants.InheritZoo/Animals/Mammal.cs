@@ -1,12 +1,17 @@
-﻿namespace SuperAwesomeFancyPants.InheritZoo.Animals
+﻿using System;
+
+namespace SuperAwesomeFancyPants.InheritZoo.Animals
 {
     public abstract class Mammal : Animal
     {
-        protected Mammal(int weight)
-        {
-            Weight = weight;
-        }
+        protected Mammal() { }
 
-        public int MaxNumberOfChildernInWomb { get; set; } = 4;
+        protected Mammal(int weight, string name = null)
+            : base(weight, name) { }
+
+        protected Mammal(int weight, DateTime date, string name = null)
+            : base(weight, date, name) { }
+
+        public int NumberOfChildernInWomb { get; set; }
     }
 }
