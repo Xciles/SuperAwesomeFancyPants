@@ -13,13 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperAwesomeFancyPants.Inhe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperAwesomeFancyPants.Day4", "SuperAwesomeFancyPants.Day4\SuperAwesomeFancyPants.Day4.csproj", "{44F91702-5747-4F1B-8AE8-7A1136665F9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.Generics", "SuperAwesomeFancyPants.Generics\SuperAwesomeFancyPants.Generics.csproj", "{EC11DACA-BE2D-4E22-B278-3BB39B549990}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperAwesomeFancyPants.Generics", "SuperAwesomeFancyPants.Generics\SuperAwesomeFancyPants.Generics.csproj", "{EC11DACA-BE2D-4E22-B278-3BB39B549990}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.Demo", "SuperAwesomeFancyPants.Demo\SuperAwesomeFancyPants.Demo.csproj", "{F08FBAE7-8E58-4EDE-B49C-A970A400B87A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperAwesomeFancyPants.Demo", "SuperAwesomeFancyPants.Demo\SuperAwesomeFancyPants.Demo.csproj", "{F08FBAE7-8E58-4EDE-B49C-A970A400B87A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.Web", "SuperAwesomeFancyPants.Web\SuperAwesomeFancyPants.Web.csproj", "{B1452543-0BF2-46C1-97AD-89B94CEEC4BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperAwesomeFancyPants.Web", "SuperAwesomeFancyPants.Web\SuperAwesomeFancyPants.Web.csproj", "{B1452543-0BF2-46C1-97AD-89B94CEEC4BD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.Uwp", "SuperAwesomeFancyPants.Uwp\SuperAwesomeFancyPants.Uwp.csproj", "{3973EC7E-53B5-4AB8-9117-23116EEBC114}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.Day7", "SuperAwesomeFancyPants.Day7\SuperAwesomeFancyPants.Day7.csproj", "{49586398-29F4-44E3-9CAE-0B3812A14D19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -181,6 +183,22 @@ Global
 		{3973EC7E-53B5-4AB8-9117-23116EEBC114}.Release|x86.ActiveCfg = Release|x86
 		{3973EC7E-53B5-4AB8-9117-23116EEBC114}.Release|x86.Build.0 = Release|x86
 		{3973EC7E-53B5-4AB8-9117-23116EEBC114}.Release|x86.Deploy.0 = Release|x86
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Debug|ARM.Build.0 = Debug|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Debug|x64.Build.0 = Debug|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Debug|x86.Build.0 = Debug|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Release|ARM.ActiveCfg = Release|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Release|ARM.Build.0 = Release|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Release|x64.ActiveCfg = Release|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Release|x64.Build.0 = Release|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Release|x86.ActiveCfg = Release|Any CPU
+		{49586398-29F4-44E3-9CAE-0B3812A14D19}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
