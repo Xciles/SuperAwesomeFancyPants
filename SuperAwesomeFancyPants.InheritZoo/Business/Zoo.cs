@@ -113,5 +113,10 @@ namespace SuperAwesomeFancyPants.InheritZoo.Business
         {
             return _foodStock.RemoveFoodFromStock<T>(requiredNumberOfFood);
         }
+
+        public int GetNumberOfAnimals()
+        {
+            return _animals.Count;
+        }
     }
 }
