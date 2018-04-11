@@ -13,6 +13,8 @@ namespace SuperAwesomeFancyPants.InheritZoo.Business
     {
         private static Zoo _instance;
 
+
+
         private readonly IList<Animal> _animals = new List<Animal>();
         private FoodStock _foodStock = new FoodStock();
 
@@ -25,6 +27,7 @@ namespace SuperAwesomeFancyPants.InheritZoo.Business
             if (_instance == null)
             {
                 _instance = new Zoo();
+
             }
 
             return _instance;
@@ -64,6 +67,7 @@ namespace SuperAwesomeFancyPants.InheritZoo.Business
             //  No food > die
             // Check alive
 
+            // a comment
             foreach (var animal in _animals)
             {
                 animal.Eat();
