@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SuperAwesomeFancyPants.InheritZoo.Animals.Others
+namespace SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Others
 {
     public class Zergling : Mammal
     {

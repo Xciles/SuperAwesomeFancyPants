@@ -1,7 +1,8 @@
 ﻿using System;
-using SuperAwesomeFancyPants.InheritZoo.Animals.Interfaces;
+using SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Interfaces;
+using SuperAwesomeFancyPants.InheritZoo.Domain.Food.Interfaces;
 
-namespace SuperAwesomeFancyPants.InheritZoo.Animals.Mammals
+namespace SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Mammals
 {
     public class Giraffe : Mammal, IHerbivore
     {
@@ -23,7 +24,7 @@ namespace SuperAwesomeFancyPants.InheritZoo.Animals.Mammals
 
         public void EatGrass()
         {
-            
+            base.GetFoodAndEat<IPlant>();
         }
     }
 }

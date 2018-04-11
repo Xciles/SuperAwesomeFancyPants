@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections;
-using SuperAwesomeFancyPants.InheritZoo.Animals;
-using SuperAwesomeFancyPants.InheritZoo.Animals.Interfaces;
-using SuperAwesomeFancyPants.InheritZoo.Animals.Mammals;
 using SuperAwesomeFancyPants.InheritZoo.Business;
+using SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Interfaces;
+using SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Mammals;
 using SuperAwesomeFancyPants.InheritZoo.Extensions;
 
 namespace SuperAwesomeFancyPants.InheritZoo
@@ -30,23 +29,9 @@ namespace SuperAwesomeFancyPants.InheritZoo
     /// </summary>
     public class Program
     {
-        
-
         public static void Main(string[] args)
         {
-            var someString = "this is a bit of text that I want to do something with";
-            var numberOfWords = someString.Split(" ").Length;
-            var numberOfWordsEx = someString.NumberOfWords();
-            //var numberOfWordsOfMethod = NumberOfWords(someString);
-
-
-
-            IAnimal animal = new Lion(1);
-            animal.Eat();
-
-
-
-            Zoo zoo = new Zoo();
+            Zoo zoo = Zoo.Instance();
 
             zoo.FillZoo();
             zoo.PrintInfo();
@@ -64,6 +49,8 @@ namespace SuperAwesomeFancyPants.InheritZoo
 
             zoo.PrintInfo();
 
+            zoo.Iterate();
+            zoo.PrintInfo();
 
             Console.ReadKey();
         }

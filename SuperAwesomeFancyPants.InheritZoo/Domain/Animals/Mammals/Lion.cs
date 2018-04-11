@@ -1,9 +1,10 @@
 ﻿using System;
-using SuperAwesomeFancyPants.InheritZoo.Animals.Interfaces;
+using SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Interfaces;
+using SuperAwesomeFancyPants.InheritZoo.Domain.Food.Interfaces;
 
-namespace SuperAwesomeFancyPants.InheritZoo.Animals.Mammals
+namespace SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Mammals
 {
-    public class Lion : Mammal, IHerbivore
+    public class Lion : Mammal, ICarnivore
     {
         public Lion(int weight) 
             : base(weight, "Lion")
@@ -12,7 +13,7 @@ namespace SuperAwesomeFancyPants.InheritZoo.Animals.Mammals
 
         public override void Eat()
         {
-            EatGrass();
+            EatMeat();
         }
 
         public override void MakeSound()
@@ -21,9 +22,9 @@ namespace SuperAwesomeFancyPants.InheritZoo.Animals.Mammals
             SomeMethodInAnimal();
         }
 
-        public void EatGrass()
+        public void EatMeat()
         {
-            Console.WriteLine("Eating some 'grass'");
+            base.GetFoodAndEat<IMeat>();
         }
     }
 }

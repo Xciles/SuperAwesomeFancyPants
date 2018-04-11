@@ -1,102 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Sockets;
-using SuperAwesomeFancyPants.InheritZoo.Animals;
-using SuperAwesomeFancyPants.InheritZoo.Animals.Interfaces;
-using SuperAwesomeFancyPants.InheritZoo.Animals.Mammals;
-using SuperAwesomeFancyPants.InheritZoo.Animals.Others;
-using SuperAwesomeFancyPants.InheritZoo.Animals.Reptiles;
-using SuperAwesomeFancyPants.InheritZoo.Extensions;
+using SuperAwesomeFancyPants.InheritZoo.Domain.Animals;
+using SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Mammals;
+using SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Others;
+using SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Reptiles;
+using SuperAwesomeFancyPants.InheritZoo.Domain.Food.Interfaces;
 
 namespace SuperAwesomeFancyPants.InheritZoo.Business
 {
     public class Zoo
     {
-        private IList<Animal> _animals = new List<Animal>();
+        private static Zoo _instance;
 
-        private bool TrySum(int x, int y, out int outValue)
+        private readonly IList<Animal> _animals = new List<Animal>();
+        private FoodStock _foodStock = new FoodStock();
+
+        protected Zoo()
         {
-            outValue = -1;
-            try
-            {
-                outValue = x + y;
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
         }
 
+        public static Zoo Instance()
+        {
+            if (_instance == null)
+            {
+                _instance = new Zoo();
+            }
+
+            return _instance;
+        }
 
         public void FillZoo()
         {
-            //int outValue;
-            //var result = TrySum(5, 5, out outValue);
-            //if (TrySum(5, 5, out outValue))
-            //{
-
-            //}
-
-            //Animal animal = new Lion(1);
-
-            //string st = "thing";
-
-            ////Lion lion = (Lion) animal;
-            //Lion lion = animal as Lion;
-            //if (lion == null)
-            //{
-
-            //}
-
-            //string number = "thing";
-            //int iNumber = Convert.ToInt32(number);
-
-            //int.TryParse(number, out int parseResult);
-
-
-            //int i = 123;
-            //long l = i;
-            ////short s = i;
-
-            //double d = 123.1;
-            //int di = (int) d;
-
-
             _animals.Add(new Lion(60));
             _animals.Add(new Lion(14));
             _animals.Add(new Dog(50));
 
             _animals.Add(new Giraffe(150));
             _animals.Add(new Crocodile(250));
-            //_animals.Count
-            var numberOfLions = _animals.NumberOfMammals<Animal,Lion>();
-
-            if (_animals.Any())
-            if (_animals.Count == 0)
-            {
-
-            }
-
-            var listFor = new List<Animal>();
-            foreach (var animal in _animals)
-            {
-                if (animal.Weight > 10)
-                {
-                    listFor.Add(animal);
-                }
-            }
-
-            var list = _animals.Where(animal => animal.Weight > 10).ToList();
-
-            var listQ = (from animal in _animals
-                        where animal.Weight > 10
-                        select animal);
-
-            _animals.FirstOrDefault();
-
-            var lions = _animals.OfType<IHerbivore>();
         }
 
         public void AddLion(int weight)
@@ -111,18 +52,62 @@ namespace SuperAwesomeFancyPants.InheritZoo.Business
 
         public void PrintInfo()
         {
+            PrintNumberOfAnimals();
+            PrintAnimalInfo();
+            PrintFoodStock();
+        }
+
+        public void Iterate()
+        {
+            // Check food
+            //  No food > murder
+            //  No food > die
+            // Check alive
+
+            foreach (var animal in _animals)
+            {
+                animal.Eat();
+                Console.WriteLine($"{animal.GetType().Name} IsHungy: {animal.IsHungry}");
+            }
+        }
+
+        public void PrintNumberOfAnimals()
+        {
+            var type = typeof(Animal);
+            var types = AppDomain.CurrentDomain.GetAssemblies()
+                            .SelectMany(s => s.GetTypes())
+                            .Where(p => p.IsSubclassOf(type) && !p.IsAbstract);
+
+            foreach (var typeOfAnimal in types)
+            {
+                Console.WriteLine($"Animal Type: {typeOfAnimal.Name}, # of Animals for type: {_animals.Count(x => x.GetType() == typeOfAnimal)}");
+            }
+        }
+
+        private void PrintAnimalInfo()
+        {
+            Console.WriteLine("Animals in the zoo");
             foreach (var animal in _animals)
             {
                 Console.WriteLine($"Type of Animal: {animal.GetType().Name}. " +
                                   $"Name: {animal.Name}, Weight: {animal.Weight}.");
-                animal.Eat();
+                //Console.Write("Eat: ");
+                //animal.Eat();
+                Console.Write("Sound: ");
                 animal.MakeSound();
-
-                if (animal is IHerbivore herbivore)
-                {
-                    herbivore.EatGrass();
-                }
             }
+        }
+
+        public void PrintFoodStock()
+        {
+            Console.WriteLine("Print food stock information");
+            _foodStock.PrintInfo();
+        }
+
+        public bool GetFood<T>(float requiredNumberOfFood)
+            where T : IFood
+        {
+            return _foodStock.RemoveFoodFromStock<T>(requiredNumberOfFood);
         }
     }
 }

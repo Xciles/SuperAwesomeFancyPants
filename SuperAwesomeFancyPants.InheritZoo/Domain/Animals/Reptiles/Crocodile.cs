@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SuperAwesomeFancyPants.InheritZoo.Animals.Reptiles
+namespace SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Reptiles
 {
     public class Crocodile : Reptile
     {
