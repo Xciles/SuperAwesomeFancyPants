@@ -11,7 +11,7 @@ namespace SuperAwesomeFancyPants.Generics
         {
             foreach (int i in Integers())
             {
-                Console.WriteLine(i.ToString(), 1);
+                Console.WriteLine(i.ToString(), 5, "something");
             }
         }
 
