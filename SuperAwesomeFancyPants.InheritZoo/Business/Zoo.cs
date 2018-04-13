@@ -36,10 +36,23 @@ namespace SuperAwesomeFancyPants.InheritZoo.Business
         {
             _animals.Add(new Lion(60));
             _animals.Add(new Lion(14));
+            _animals.Add(new Lion(15));
+            _animals.Add(new Lion(156));
+            _animals.Add(new Lion(10));
             _animals.Add(new Dog(50));
 
             _animals.Add(new Giraffe(150));
+            _animals.Add(new Giraffe(12));
+            _animals.Add(new Giraffe(5));
+            _animals.Add(new Giraffe(63));
+            _animals.Add(new Giraffe(155));
+            _animals.Add(new Giraffe(234));
             _animals.Add(new Crocodile(250));
+
+            _animals.Add(new Terran());
+            _animals.Add(new Terran());
+            _animals.Add(new Terran());
+            _animals.Add(new Terran());
         }
 
         public void AddLion(int weight)
@@ -136,6 +149,18 @@ namespace SuperAwesomeFancyPants.InheritZoo.Business
             }
 
             return herbivore;
+        }
+
+        public T Find<T>()
+            where T : IAnimal
+        {
+            var animal = _animals.OfType<T>().FirstOrDefault(x => x.IsAlive);
+            if (animal != null)
+            {
+                animal.IsAlive = false;
+            }
+
+            return animal;
         }
     }
 }

@@ -17,6 +17,7 @@ namespace SuperAwesomeFancyPants.InheritZoo.Business
             _foodStock.Add(new Meat() { Amount = 100, Name = "Pig" });
             _foodStock.Add(new Leaf() { Amount = 10, Name = "Oak" });
             _foodStock.Add(new Leaf() { Amount = 50, Name = "Pine" });
+            _foodStock.Add(new Grass() { Amount = 1000, Name = "Nice Grass"});
         }
 
         public bool RemoveFoodFromStock<T>(float requiredAmountOfFood)
