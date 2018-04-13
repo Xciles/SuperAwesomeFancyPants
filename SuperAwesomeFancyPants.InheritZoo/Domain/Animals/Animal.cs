@@ -12,6 +12,7 @@ namespace SuperAwesomeFancyPants.InheritZoo.Domain.Animals
         public int Weight { get; set; }
         public DateTime Date { get; set; } = DateTime.Now;
         public bool IsHungry { get; set; }
+        public bool IsAlive { get; set; } = true;
         public float AmountOfFoodWhenEating
         {
             get { return Weight / 2.5f; }

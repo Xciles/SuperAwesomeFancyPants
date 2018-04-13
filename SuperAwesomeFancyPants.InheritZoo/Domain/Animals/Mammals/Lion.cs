@@ -1,12 +1,13 @@
 ﻿using System;
 using SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Interfaces;
 using SuperAwesomeFancyPants.InheritZoo.Domain.Food.Interfaces;
+using SuperAwesomeFancyPants.InheritZoo.Extensions;
 
 namespace SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Mammals
 {
     public class Lion : Mammal, ICarnivore
     {
-        public Lion(int weight) 
+        public Lion(int weight)
             : base(weight, "Lion")
         {
         }
@@ -25,6 +26,12 @@ namespace SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Mammals
         public void EatMeat()
         {
             base.GetFoodAndEat<IMeat>();
+
+            if (IsHungry)
+            {
+                this.FightHerbivore();
+                IsAlive = !IsHungry;
+            }
         }
     }
 }

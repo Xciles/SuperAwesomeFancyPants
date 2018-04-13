@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using SuperAwesomeFancyPants.InheritZoo.Domain.Animals;
+using SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Interfaces;
 using SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Mammals;
 using SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Others;
 using SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Reptiles;
@@ -13,10 +14,8 @@ namespace SuperAwesomeFancyPants.InheritZoo.Business
     {
         private static Zoo _instance;
 
-
-
-        private readonly IList<Animal> _animals = new List<Animal>();
-        private FoodStock _foodStock = new FoodStock();
+        private readonly IList<IAnimal> _animals = new List<IAnimal>();
+        private readonly FoodStock _foodStock = new FoodStock();
 
         protected Zoo()
         {
@@ -70,8 +69,17 @@ namespace SuperAwesomeFancyPants.InheritZoo.Business
             // a comment
             foreach (var animal in _animals)
             {
-                animal.Eat();
-                Console.WriteLine($"{animal.GetType().Name} IsHungy: {animal.IsHungry}");
+                if (animal.IsAlive)
+                {
+                    animal.Eat();
+                    Console.WriteLine($"{animal.GetType().Name} IsHungy: {animal.IsHungry}");
+                }
+            }
+
+            var animalsToRemove = _animals.Where(x => !x.IsAlive).ToList();
+            foreach (var animal in animalsToRemove)
+            {
+                _animals.Remove(animal);
             }
         }
 
@@ -117,6 +125,17 @@ namespace SuperAwesomeFancyPants.InheritZoo.Business
         public int GetNumberOfAnimals()
         {
             return _animals.Count;
+        }
+
+        public IHerbivore FindHerbivore()
+        {
+            var herbivore = _animals.OfType<IHerbivore>().FirstOrDefault(x => x.IsAlive);
+            if (herbivore != null)
+            {
+                herbivore.IsAlive = false;
+            }
+
+            return herbivore;
         }
     }
 }

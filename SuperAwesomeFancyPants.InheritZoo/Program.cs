@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Threading;
 using SuperAwesomeFancyPants.InheritZoo.Business;
 using SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Interfaces;
 using SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Mammals;
@@ -51,6 +52,17 @@ namespace SuperAwesomeFancyPants.InheritZoo
 
             zoo.Iterate();
             zoo.PrintInfo();
+
+            // loop
+            for (int i = 0; i < 3; i++)
+            {
+                zoo.PrintNumberOfAnimals();
+                zoo.Iterate();
+
+                Thread.Sleep(1000);
+            }
+
+            zoo.PrintNumberOfAnimals();
 
             Console.ReadKey();
         }

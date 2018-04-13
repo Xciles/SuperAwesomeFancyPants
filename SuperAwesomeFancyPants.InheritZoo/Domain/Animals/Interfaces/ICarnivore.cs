@@ -1,6 +1,6 @@
 ﻿namespace SuperAwesomeFancyPants.InheritZoo.Domain.Animals.Interfaces
 {
-    public interface ICarnivore
+    public interface ICarnivore : IAnimal
     {
         void EatMeat();
     }
