@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SuperAwesomeFancyPants.Web.Models;
@@ -32,6 +33,7 @@ namespace SuperAwesomeFancyPants.Web.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
+            Thread.Sleep(10_000);
 
             return View();
         }
@@ -39,7 +41,6 @@ namespace SuperAwesomeFancyPants.Web.Controllers
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 

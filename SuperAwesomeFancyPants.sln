@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperAwesomeFancyPants.MsTe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperAwesomeFancyPants.ZooTests", "SuperAwesomeFancyPants.ZooTests\SuperAwesomeFancyPants.ZooTests.csproj", "{CEA6E38E-0070-402A-8ED1-4383BB8DABE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.PracticeQuestions", "SuperAwesomeFancyPants.PracticeQuestions\SuperAwesomeFancyPants.PracticeQuestions.csproj", "{1E282724-D0CF-466C-9F9E-3B301B6863FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperAwesomeFancyPants.PracticeQuestions", "SuperAwesomeFancyPants.PracticeQuestions\SuperAwesomeFancyPants.PracticeQuestions.csproj", "{1E282724-D0CF-466C-9F9E-3B301B6863FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.Day9", "SuperAwesomeFancyPants.Day9\SuperAwesomeFancyPants.Day9.csproj", "{CE61610B-D454-4A27-8418-B7468592D77A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -253,6 +255,22 @@ Global
 		{1E282724-D0CF-466C-9F9E-3B301B6863FB}.Release|x64.Build.0 = Release|Any CPU
 		{1E282724-D0CF-466C-9F9E-3B301B6863FB}.Release|x86.ActiveCfg = Release|Any CPU
 		{1E282724-D0CF-466C-9F9E-3B301B6863FB}.Release|x86.Build.0 = Release|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Debug|ARM.Build.0 = Debug|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Debug|x64.Build.0 = Debug|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Debug|x86.Build.0 = Debug|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Release|ARM.ActiveCfg = Release|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Release|ARM.Build.0 = Release|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Release|x64.ActiveCfg = Release|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Release|x64.Build.0 = Release|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Release|x86.ActiveCfg = Release|Any CPU
+		{CE61610B-D454-4A27-8418-B7468592D77A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
