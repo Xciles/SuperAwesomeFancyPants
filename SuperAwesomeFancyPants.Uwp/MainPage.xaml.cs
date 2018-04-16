@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -26,11 +27,11 @@ namespace SuperAwesomeFancyPants.Uwp
     {
         public MainPage()
         {
-            RunSomething();
-            RunSomething();
-            RunSomething();
-            RunSomething();
-            RunSomething();
+            //RunSomething();
+            //RunSomething();
+            //RunSomething();
+            //RunSomething();
+            //RunSomething();
             this.InitializeComponent();
         }
 
@@ -38,7 +39,7 @@ namespace SuperAwesomeFancyPants.Uwp
         {
             ListView.Items.Add("ButtonBase_OnClick");
 
-            Task.Delay(1000).Wait();
+            Task.Delay(5000).Wait();
 
             ListView.Items.Add("ButtonBase_OnClick end");
         }
@@ -47,7 +48,10 @@ namespace SuperAwesomeFancyPants.Uwp
         {
             ListView.Items.Add("ButtonBase2_OnClick");
 
-            await Task.Delay(1000);
+            await Task.Delay(5000);
+
+            HttpClient client = new HttpClient();
+            string result = await client.GetStringAsync("https://jsonplaceholder.typicode.com/users");
 
             ListView.Items.Add("ButtonBase2_OnClick end");
         }
