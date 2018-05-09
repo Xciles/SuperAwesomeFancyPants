@@ -31,9 +31,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperAwesomeFancyPants.Prac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperAwesomeFancyPants.Day9", "SuperAwesomeFancyPants.Day9\SuperAwesomeFancyPants.Day9.csproj", "{CE61610B-D454-4A27-8418-B7468592D77A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.Threading", "SuperAwesomeFancyPants.Threading\SuperAwesomeFancyPants.Threading.csproj", "{E0DFC234-2736-40D5-BC42-B795D7F52D5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperAwesomeFancyPants.Threading", "SuperAwesomeFancyPants.Threading\SuperAwesomeFancyPants.Threading.csproj", "{E0DFC234-2736-40D5-BC42-B795D7F52D5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.Threading.Logic", "SuperAwesomeFancyPants.Threading.Logic\SuperAwesomeFancyPants.Threading.Logic.csproj", "{D8906AEB-C85E-4F37-8131-14ACC89687AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperAwesomeFancyPants.Threading.Logic", "SuperAwesomeFancyPants.Threading.Logic\SuperAwesomeFancyPants.Threading.Logic.csproj", "{D8906AEB-C85E-4F37-8131-14ACC89687AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.DayN", "SuperAwesomeFancyPants.DayN\SuperAwesomeFancyPants.DayN.csproj", "{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -308,6 +310,22 @@ Global
 		{D8906AEB-C85E-4F37-8131-14ACC89687AF}.Release|x64.Build.0 = Release|Any CPU
 		{D8906AEB-C85E-4F37-8131-14ACC89687AF}.Release|x86.ActiveCfg = Release|Any CPU
 		{D8906AEB-C85E-4F37-8131-14ACC89687AF}.Release|x86.Build.0 = Release|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Debug|ARM.Build.0 = Debug|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Debug|x64.Build.0 = Debug|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Debug|x86.Build.0 = Debug|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Release|ARM.ActiveCfg = Release|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Release|ARM.Build.0 = Release|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Release|x64.ActiveCfg = Release|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Release|x64.Build.0 = Release|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Release|x86.ActiveCfg = Release|Any CPU
+		{6EFB97E7-D646-4E93-A6EE-E9D318AF1C10}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
