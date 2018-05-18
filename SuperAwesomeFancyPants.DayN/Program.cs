@@ -6,39 +6,83 @@ using System.Threading;
 
 namespace SuperAwesomeFancyPants.DayN
 {
+
     //class Program
     //{
-    //    public delegate void Del(string message);
-
-    //    // Create a method for a delegate.
-    //    public static void DelegateMethod(string message)
+    //    public static void Main(string[] a)
     //    {
-    //        System.Console.WriteLine(message);
-    //    }
+    //        var ms = new MemoryStream();
 
-    //    public static void Main(string[] args)
-    //    {
-    //        Del someName = message => Console.WriteLine($"Other message {message}");
+    //        Console.WriteLine(ms.ToString());
 
-    //        someName("weiuthwiltuh");
 
-    //        // Instantiate the delegate.
-    //        Del handler = DelegateMethod;
+    //        IEnumerable<string> list = new List<string>();
 
-    //        // Call the delegate.
-    //        handler("Hello World");
-    //        handler("SOmething else");
+    //        list.ToList().ForEach(s =>
+    //        {
 
-    //        MethodWithCallback(1, 2, handler);
+    //        });
+
+    //        foreach (var s in list)
+    //        {
+                
+    //        }
 
     //        Console.ReadKey();
     //    }
-
-    //    public static void MethodWithCallback(int param1, int param2, Del callback)
-    //    {
-    //        callback("The number is: " + (param1 + param2).ToString());
-    //    }
     //}
+
+    class Program
+    {
+        public delegate void Del(string message);
+
+        public delegate string Combine(string s1, string s2);
+
+        // Create a method for a delegate.
+        public static void DelegateMethod(string message)
+        {
+            System.Console.WriteLine(message);
+        }
+
+        public static void Main(string[] args)
+        {
+            Del someName = message => Console.WriteLine($"Other message {message}");
+            Del someName1 = delegate(string message) { Console.WriteLine("w/e"); };
+            Del someName2 = SomeName2;
+
+            Combine combine1 = delegate(string s1, string s2) { return s1 + s2; };
+            Combine combine2 = (s1, s2) => { return s1 + s2; };
+            Combine combine3 = Combine3;
+
+            someName("weiuthwiltuh");
+
+            // Instantiate the delegate.
+            Del handler = DelegateMethod;
+
+            // Call the delegate.
+            handler("Hello World");
+            handler("SOmething else");
+
+            MethodWithCallback(1, 2, handler);
+
+            Console.ReadKey();
+        }
+
+        private static string Combine3(string s1, string s)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void SomeName2(string s)
+        {
+            
+        }
+
+        public static void MethodWithCallback(int param1, int param2, Del callback)
+        {
+            callback("The number is: " + (param1 + param2).ToString());
+        }
+    }
 
     //class Program
     //{
@@ -218,65 +262,65 @@ namespace SuperAwesomeFancyPants.DayN
     //    }
     //}
 
-    public class SomeClass
-    {
-        public string SOmeString { get; set; }
-        public int SOmeInto { get; set; }
-    }
+    //public class SomeClass
+    //{
+    //    public string SOmeString { get; set; }
+    //    public int SOmeInto { get; set; }
+    //}
 
-    class Program
-    {
-        //public static Action<SomeClass> NotifyUpdatedBl;
+    //class Program
+    //{
+    //    //public static Action<SomeClass> NotifyUpdatedBl;
 
-        //public delegate void NotifyDelegate(SomeClass mySomeClass);
-        //public static event NotifyDelegate NotifyUpdated;
+    //    //public delegate void NotifyDelegate(SomeClass mySomeClass);
+    //    //public static event NotifyDelegate NotifyUpdated;
 
-        public static void Main()
-        {
-            //Timer timer = new Timer(state =>
-            //{
+    //    public static void Main()
+    //    {
+    //        //Timer timer = new Timer(state =>
+    //        //{
 
-            //}, null, 100, 100);
+    //        //}, null, 100, 100);
 
-            //NotifyUpdatedBl += param => { Console.WriteLine(param.SOmeInto + param.SOmeString); };
-            //NotifyUpdatedBl += param => { Console.WriteLine("Bla: " + param.SOmeInto + param.SOmeString); };
-
-
-            //NotifyUpdatedBl.Invoke(new SomeClass());
-
-            //NotifyUpdated += my => { }
+    //        //NotifyUpdatedBl += param => { Console.WriteLine(param.SOmeInto + param.SOmeString); };
+    //        //NotifyUpdatedBl += param => { Console.WriteLine("Bla: " + param.SOmeInto + param.SOmeString); };
 
 
-            Adder a = new Adder();
-            a.OnMultipleOfFiveReached += a_MultipleOfFiveReached;
+    //        //NotifyUpdatedBl.Invoke(new SomeClass());
 
-            int iAnswer = a.Add(4, 3);
-            Console.WriteLine("iAnswer = {0}", iAnswer);
-            iAnswer = a.Add(4, 6);
-            Console.WriteLine("iAnswer = {0}", iAnswer);
+    //        //NotifyUpdated += my => { }
 
-            Console.ReadKey();
-        }
 
-        static void a_MultipleOfFiveReached()
-        {
-            Console.WriteLine("Multiple of five reached!");
-        }
-    }
+    //        Adder a = new Adder();
+    //        a.OnMultipleOfFiveReached += a_MultipleOfFiveReached;
 
-    public class Adder
-    {
-        public delegate void DgEventRaiser();
-        public event DgEventRaiser OnMultipleOfFiveReached;
+    //        int iAnswer = a.Add(4, 3);
+    //        Console.WriteLine("iAnswer = {0}", iAnswer);
+    //        iAnswer = a.Add(4, 6);
+    //        Console.WriteLine("iAnswer = {0}", iAnswer);
 
-        public int Add(int x, int y)
-        {
-            int iSum = x + y;
-            if ((iSum % 5 == 0) && (OnMultipleOfFiveReached != null))
-            {
-                OnMultipleOfFiveReached();
-            }
-            return iSum;
-        }
-    }
+    //        Console.ReadKey();
+    //    }
+
+    //    static void a_MultipleOfFiveReached()
+    //    {
+    //        Console.WriteLine("Multiple of five reached!");
+    //    }
+    //}
+
+    //public class Adder
+    //{
+    //    public delegate void DgEventRaiser();
+    //    public event DgEventRaiser OnMultipleOfFiveReached;
+
+    //    public int Add(int x, int y)
+    //    {
+    //        int iSum = x + y;
+    //        if ((iSum % 5 == 0) && (OnMultipleOfFiveReached != null))
+    //        {
+    //            OnMultipleOfFiveReached();
+    //        }
+    //        return iSum;
+    //    }
+    //}
 }
