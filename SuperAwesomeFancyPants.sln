@@ -41,7 +41,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperAwesomeFancyPants.AdvW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.Full", "SuperAwesomeFancyPants.Full\SuperAwesomeFancyPants.Full.csproj", "{CC57DEAD-5CBF-4196-A317-1B7320A3DEE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAwesomeFancyPants.DayN1", "SuperAwesomeFancyPants.DayN1\SuperAwesomeFancyPants.DayN1.csproj", "{AF22781E-73D2-4414-9047-5AB0E1D2E496}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperAwesomeFancyPants.DayN1", "SuperAwesomeFancyPants.DayN1\SuperAwesomeFancyPants.DayN1.csproj", "{AF22781E-73D2-4414-9047-5AB0E1D2E496}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
